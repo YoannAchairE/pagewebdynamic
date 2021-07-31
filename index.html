@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device=width, initial_scale=1.0">
+    <title>Web Page Design</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="hero">
+        <div class="navbar">
+            <img src="log1.jpeg" class="logo">
+            <div class="user">
+                <button type="button">Explorer</button>
+                <img src="logo.jpg" >
+            </div>
+        </div>
+
+        <div class= "container">
+            <div class="info">
+                <h1>Découvrez nos offres personnalisées</h1>
+                <p>Nos experts réaliserons <br>vos rêves de déco sans vous ruiner</p>
+                <input type="text" placeholder="Rechercher">
+            </div>
+        </div>
+
+        <div class="slider">
+            <img src= "flechenext.png" id="prev">
+            <div class="preview">
+                <img src="im1.jpg" class=" active thumbnail">
+                <img src="im2.jpg" class="thumbnail">
+                <img src="im3.jpg" class="thumbnail">
+                <img src="im4.jpg" class="thumbnail">
+                <img src="im5.jpg" class="thumbnail">
+            </div>
+            <img src= "flechenext.png" id="next">
+            
+        </div>
+
+    </div>
+
+    
+
+    <script>
+        var prev = document.getElementById("prev");
+        var next = document.getElementById("next")
+        var thumbnail = document.getElementsByClassName("thumbnail");
+        var hero= document.getElementById("hero"); 
+        var backgroundImg= new Array(
+            "im1.jpg",
+            "im2.jpg",
+            "im3.jpg",
+            "im4.jpg",
+            "im5.jpg",
+
+        );
+        let i = 0;
+        next.onclick = function() {
+            if(i<4){
+                hero.style.backgroundImage= 'url("'+backgroundImg[i+1]+'")';
+                thumbnail[i+1].classList.add("active");
+                thumbnail[i].classList.remove("active");
+                i++;
+            }
+            
+        }
+        prev.onclick = function() {
+            if(i>0){
+                hero.style.backgroundImage= 'url("'+backgroundImg[i-1]+'")';
+                thumbnail[i-1].classList.add("active");
+                thumbnail[i].classList.remove("active");
+                i--;
+            }
+            
+        }
+
+
+    </script>
+
+<form>
+    <h2>Connecter vous à votre compte</h2>
+    <p class "choose-email">Entrez votre adresse e-mail:</p>
+
+    <div class="inputs">
+        <input type="email"placeholder="Email:example@gmail.com">
+        <input type="password" placeholder="Mot de passe">
+    </div>
+    <p class="inscription">Si vous n'avez pas de compte, <span>Créer en un ici</span></p>
+    <div align="absolut">
+        <button type="submit">Se connecter</button>
+    </div>
+</form>
+
+
+
+
+
+
+
+</body>
+</html>
